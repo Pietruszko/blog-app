@@ -38,6 +38,7 @@ DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_USE_TLS = env('EMAIL_USE_TLS')
 
+SITE_ID = 1
 
 # Application definition
 
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'taggit',
     'blog',
