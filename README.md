@@ -21,7 +21,14 @@ This project was developed as part of my Django learning journey — following b
 
 ## Screenshots
 
-
+![Screenshot from 2025-06-07 17-47-31](https://github.com/user-attachments/assets/19afc506-feaa-4376-9075-2bfa52b45715)
+![Screenshot from 2025-06-07 18-08-31](https://github.com/user-attachments/assets/4b9c591d-3d6b-4b1e-808b-5265ef9a10e4)
+![Screenshot from 2025-06-07 18-11-31](https://github.com/user-attachments/assets/157f34de-1282-464d-8062-14a92316fedf)
+![Screenshot from 2025-06-07 18-11-00](https://github.com/user-attachments/assets/68bd8ce7-b756-4786-8be6-ef578b587187)
+![Screenshot from 2025-06-07 18-11-12](https://github.com/user-attachments/assets/f2114b80-eb8f-4fa2-92a6-1c804b9c9557)
+![Screenshot from 2025-06-07 18-09-17](https://github.com/user-attachments/assets/2683f340-8d18-4f74-8a56-c33c87221d38)
+![Screenshot from 2025-06-07 18-10-31](https://github.com/user-attachments/assets/6bfb80ed-ec16-44f7-bd4f-666b453ccb4c)
+![Screenshot from 2025-06-07 18-12-18](https://github.com/user-attachments/assets/cf0fe26f-f4ff-4025-8c60-779415e34ef5)
 
 ## Installation
 
@@ -71,9 +78,10 @@ This project was developed as part of my Django learning journey — following b
 
 ## Simplified project Structure
 
+```text
 blog-app/
 ├── blog/               # Main app: posts, comments, tags, templates
-│   ├── migrations/      # Migrations to database
+│   ├── migrations/     # Migrations to database
 │   ├── admin.py        # Custom admin for posts & comments
 │   ├── forms.py        # Comment and email sharing forms
 │   ├── models.py       # Post and Comment models
@@ -92,6 +100,7 @@ blog-app/
 ├── requirements.txt    # Packages used in project
 ├── .gitignore          # Files to excludes when commiting to repo
 ├── manage.py           # Django file to execute commands (django-admin)
+```
 
 ## Endpoints
 
