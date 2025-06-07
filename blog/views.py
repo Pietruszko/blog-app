@@ -17,7 +17,7 @@ from .forms import EmailPostForm, CommentForm, SearchForm
 class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
-    paginate_by = 3
+    paginate_by = 4
     template_name = 'blog/post/list.html'
 
 def post_list(request, tag_slug=None):
@@ -27,7 +27,7 @@ def post_list(request, tag_slug=None):
         tag = get_object_or_404(Tag, slug=tag_slug)
         post_list = post_list.filter(tags__in=[tag])
 
-    paginator = Paginator(post_list, 3)
+    paginator = Paginator(post_list, 4)
     page_number = request.GET.get('page', 1)
     try:
         posts = paginator.page(page_number)
@@ -150,6 +150,7 @@ def post_search(request):
     query = None
     results = []
 
+    # Commented out second option for search functionality
     if 'query' in request.GET:
         form = SearchForm(request.GET)
         if form.is_valid():
@@ -162,10 +163,11 @@ def post_search(request):
                 Post.published.annotate(
                     # search=search_vector,
                     # rank=SearchRank(search_vector, search_query)
-                    similarity=TrigramSimilarity('title', query),
+                    similarity=TrigramSimilarity('title', query) 
+                        + TrigramSimilarity('body', query),
                 )
                 # .filter(rank__gte=0.3)
-                .filter(similarity__gt=0.1)
+                .filter(similarity__gt=0.05)
                 # .order_by('-rank')
                 .order_by('-similarity')
             )
